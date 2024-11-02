@@ -2,7 +2,7 @@ package atendimento;
 
 public class Atendimento {
     private int id_atendimento;
-    private int data_hora_atendimento;
+    private String data_hora_atendimento;
     private String tipo_atendimento;
     private String status_atendimento;
 
@@ -14,11 +14,11 @@ public class Atendimento {
         this.id_atendimento = id_atendimento;
     }
 
-    public int getData_hora_atendimento() {
+    public String getData_hora_atendimento() {
         return data_hora_atendimento;
     }
 
-    public void setData_hora_atendimento(int data_hora_atendimento) {
+    public void setData_hora_atendimento(String data_hora_atendimento) {
         this.data_hora_atendimento = data_hora_atendimento;
     }
 

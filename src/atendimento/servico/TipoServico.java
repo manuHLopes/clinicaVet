@@ -4,6 +4,7 @@ public class TipoServico {
     private int id_tipo_servico;
     private String descricao_servico;
     private String nome_tipo_servico;
+    private double valor_servico;
 
     //duvida quanto o id das chaves estrangeiras id_servico
 
@@ -29,5 +30,13 @@ public class TipoServico {
 
     public void setNome_tipo_servico(String nome_tipo_servico) {
         this.nome_tipo_servico = nome_tipo_servico;
+    }
+
+    public double getValor_servico() {
+        return valor_servico;
+    }
+
+    public void setValor_servico(double valor_servico) {
+        this.valor_servico = valor_servico;
     }
 }

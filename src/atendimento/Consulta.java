@@ -2,7 +2,7 @@ package atendimento;
 
 public class Consulta extends Atendimento{
     private int id_consulta;
-    private int data_consulta;
+    private String data_consulta;
     private String hora_consulta;
 
     public int getId_consulta() {
@@ -13,11 +13,11 @@ public class Consulta extends Atendimento{
         this.id_consulta = id_consulta;
     }
 
-    public int getData_consulta() {
+    public String getData_consulta() {
         return data_consulta;
     }
 
-    public void setData_consulta(int data_consulta) {
+    public void setData_consulta(String data_consulta) {
         this.data_consulta = data_consulta;
     }
 
