@@ -1,10 +1,20 @@
 package atendimento;
 
+import classes.Animal;
+import classes.Cliente;
+
 public class Atendimento {
     private int id_atendimento;
     private String data_hora_atendimento;
     private String tipo_atendimento;
     private String status_atendimento;
+    private Animal animal;
+    private Cliente cliente;
+
+    public Atendimento(){
+        this.animal = new Animal();
+        this.cliente = new Cliente();
+    }
 
     public int getId_atendimento() {
         return id_atendimento;
@@ -36,5 +46,19 @@ public class Atendimento {
 
     public void setStatus_atendimento(String status_atendimento) {
         this.status_atendimento = status_atendimento;
+    }
+
+    public String Imprimir(){
+        return "Nome do animal: "+ animal.getNome_animal()+", Raça: "+animal.getRaca()+"," +
+                " Espécie: "+animal.getEspecie()+"\nData nascimento: "+animal.getData_nascimento_animal()+", " +
+                "Sexo (M ou F): "+animal.getSexo()+", Pelagem: "+animal.getPelagem()+",\n" +
+                "Peso animal: ESTÁ FALTANDO\n\n" +
+                "Data e hora do atendimento: "+data_hora_atendimento+", tipo do atendimento: "+tipo_atendimento+", " +
+                "status do atendimento: "+status_atendimento+"\n\n" +
+                "Dados do cliente (dono do animal): "+cliente.getNome_cliente()+", email: "+cliente.getEmail()+", " +
+                "CPF: "+cliente.getCpf()+", endereço: "+cliente.getEndereco()+", " +
+                "data de nascimento: "+cliente.getData_nascimento_cliente()+"\n" +
+                "telefone: "+cliente.getTelefone();
+
     }
 }

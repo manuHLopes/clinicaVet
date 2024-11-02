@@ -1,15 +1,37 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import atendimento.Atendimento;
+import classes.Animal;
+import classes.Cliente;
+
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner leia = new Scanner(System.in);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Atendimento atendimento = new Atendimento();
+        Animal animal = new Animal();
+        Cliente cliente = new Cliente();
+
+        //Dados do cliente:
+
+        System.out.print("Digite seu nome: ");
+        cliente.setNome_cliente(leia.nextLine());
+        System.out.print("Digite seu email: ");
+        cliente.setEmail(leia.next());
+        System.out.print("Digite seu CPF: ");
+        cliente.setCpf(leia.next());
+        System.out.print("Digite seu telefone: ");
+        cliente.setTelefone(leia.next());
+        System.out.print("Digite sua data de nascimento: ");
+        cliente.setData_nascimento_cliente(leia.next());
+        System.out.print("Digite seu endereço: : ");
+        cliente.setEndereco(leia.nextLine());
+
+        System.out.println("Dados: \n\n"+atendimento.Imprimir());
+
+
+
+
+        leia.close();
     }
 }
