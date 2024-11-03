@@ -24,13 +24,32 @@ public class Main {
         cliente.setTelefone(leia.next());
         System.out.print("Digite sua data de nascimento: ");
         cliente.setData_nascimento_cliente(leia.next());
+        leia.nextLine();
         System.out.print("Digite seu endereço: : ");
         cliente.setEndereco(leia.nextLine());
 
-        System.out.println("Dados: \n\n"+atendimento.Imprimir());
+        System.out.println("Dados: \n\n"+cliente.Imprimir());
 
+        System.out.println("Agora digite os dados do animal: \n");
+        System.out.print("Nome: ");
+        animal.setNome_animal(leia.nextLine());
 
+        System.out.print("Espécie: ");
+        animal.setEspecie(leia.nextLine());
 
+        System.out.print("Raça: ");
+        animal.setRaca(leia.nextLine());
+
+        System.out.print("Data de nascimento: ");
+        animal.setData_nascimento_animal(leia.nextLine());
+
+        System.out.print("Pelagem: ");
+        animal.setPelagem(leia.nextLine());
+
+        System.out.print("Sexo: ");
+        animal.setSexo(leia.next().charAt(0));
+
+        System.out.println(animal.Imprimir());
 
         leia.close();
     }

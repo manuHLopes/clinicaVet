@@ -6,13 +6,6 @@ public class Servico_percentece_TipoServico {
     private Servico servico;
     private TipoServico tiposervico;
 
-    public Servico_percentece_TipoServico(double valor_total, Servico servico, TipoServico tiposervico){
-        this.valor_total = valor_total; //CONSTRUTOR
-        this.servico = servico;
-        this.tiposervico = tiposervico;
-    }
-
-    //DEPOIS QUANDO JUNTAR COLOCAR AS CHAVES ESTRANGEIRAS DA TABELA USUARIO E ANIMAL
 
     public double getValor_total() {
         return valor_total;
@@ -44,5 +37,9 @@ public class Servico_percentece_TipoServico {
 
     public void setTiposervico(TipoServico tiposervico) {
         this.tiposervico = tiposervico;
+    }
+
+    public String Imprimir(){
+        return "Valor total: "+valor_total;
     }
 }

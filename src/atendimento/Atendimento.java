@@ -49,16 +49,8 @@ public class Atendimento {
     }
 
     public String Imprimir(){
-        return "Nome do animal: "+ animal.getNome_animal()+", Raça: "+animal.getRaca()+"," +
-                " Espécie: "+animal.getEspecie()+"\nData nascimento: "+animal.getData_nascimento_animal()+", " +
-                "Sexo (M ou F): "+animal.getSexo()+", Pelagem: "+animal.getPelagem()+",\n" +
-                "Peso animal: ESTÁ FALTANDO\n\n" +
-                "Data e hora do atendimento: "+data_hora_atendimento+", tipo do atendimento: "+tipo_atendimento+", " +
-                "status do atendimento: "+status_atendimento+"\n\n" +
-                "Dados do cliente (dono do animal): "+cliente.getNome_cliente()+", email: "+cliente.getEmail()+", " +
-                "CPF: "+cliente.getCpf()+", endereço: "+cliente.getEndereco()+", " +
-                "data de nascimento: "+cliente.getData_nascimento_cliente()+"\n" +
-                "telefone: "+cliente.getTelefone();
+        return "Data e hora do atendimento: "+data_hora_atendimento+", Tipo do atendimento: "+tipo_atendimento+", " +
+                "Status do atendimento: "+status_atendimento;
 
     }
 }
