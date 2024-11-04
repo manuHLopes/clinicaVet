@@ -168,6 +168,7 @@ public class Cliente {
     public void remover_animal(){
         Scanner ler = new Scanner(System.in);
         int indice;
+        System.out.println("\n====== remover pet =======");
         System.out.println("Qual animal pet você deseja remover?");
         indice = ler.nextInt();
         animais.remove(indice-1);
