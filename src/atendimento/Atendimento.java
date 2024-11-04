@@ -1,92 +1,69 @@
 package atendimento;
 
-import atendimento.servico.Servico;
 import classes.Animal;
 import classes.Cliente;
+import atendimento.servico.Servico;
+import atendimento.servico.TipoServico;
+
 import java.util.Scanner;
 
 public class Atendimento {
-    private int id_atendimento;
-    private String data_hora_atendimento;
-    private String tipo_atendimento;
-    private String status_atendimento;
-    private Animal animal;
+    private Scanner scanner = new Scanner(System.in);
     private Cliente cliente;
-    private Servico servico;
-
-    public Atendimento() {
-        this.animal = new Animal();
-        this.cliente = new Cliente();
-        this.servico = new Servico();
-    }
-
-    public void cadastrarCliente() {
-        Scanner leia = new Scanner(System.in);
-
-        System.out.print("Digite seu nome: ");
-        cliente.setNome_cliente(leia.nextLine());
-        System.out.print("Digite seu email: ");
-        cliente.setEmail(leia.nextLine());
-        System.out.print("Digite seu CPF: ");
-        cliente.setCpf(leia.nextLine());
-        System.out.print("Digite seu telefone: ");
-        cliente.setTelefone(leia.nextLine());
-        System.out.print("Digite sua data de nascimento: ");
-        cliente.setData_nascimento_cliente(leia.nextLine());
-        System.out.print("Digite seu endereço: ");
-        cliente.setEndereco(leia.nextLine());
-    }
-
-    public void cadastrarAnimal() {
-        Scanner leia = new Scanner(System.in);
-
-        System.out.print("Nome: ");
-        animal.setNome_animal(leia.nextLine());
-        System.out.print("Espécie: ");
-        animal.setEspecie(leia.nextLine());
-        System.out.print("Raça: ");
-        animal.setRaca(leia.nextLine());
-        System.out.print("Data de nascimento: ");
-        animal.setData_nascimento_animal(leia.nextLine());
-        System.out.print("Pelagem: ");
-        animal.setPelagem(leia.nextLine());
-        System.out.print("Sexo: ");
-        animal.setSexo(leia.next().charAt(0));
-        leia.nextLine(); // Consome a nova linha
-    }
-
-    public void cadastrarServico() {
-        Scanner leia = new Scanner(System.in);
-
-        System.out.print("Digite o nome do serviço: ");
-        servico.setNome_servico(leia.nextLine());
-    }
-
-    public void cadastrarAtendimento() {
-        Scanner leia = new Scanner(System.in);
-
-        System.out.print("Digite a data e hora do atendimento: ");
-        this.data_hora_atendimento = leia.nextLine();
-        System.out.print("Digite o tipo de atendimento: ");
-        this.tipo_atendimento = leia.nextLine();
-        System.out.print("Digite o status do atendimento: ");
-        this.status_atendimento = leia.nextLine();
-    }
 
     public void realizarCadastroCompleto() {
-        cadastrarCliente();
-        cadastrarAnimal();
-        cadastrarServico();
-        cadastrarAtendimento();
+        cliente = new Cliente(); // Inicializar o cliente
+        Animal animal = new Animal();
+        Servico servico = new Servico();
+        TipoServico tipoServico = new TipoServico();
+
+        // Cadastro do Cliente
+        System.out.println("Cadastro de Cliente:");
+        System.out.print("Nome: ");
+        cliente.setNome_cliente(scanner.nextLine());
+        System.out.print("Data de nascimento: ");
+        cliente.setData_nascimento_cliente(scanner.nextLine());
+        System.out.print("Email: ");
+        cliente.setEmail(scanner.nextLine());
+        System.out.print("CPF: ");
+        cliente.setCpf(scanner.nextLine());
+        System.out.print("Telefone: ");
+        cliente.setTelefone(scanner.nextLine());
+        System.out.print("Endereço: ");
+        cliente.setEndereco(scanner.nextLine());
+
+        // Cadastro do Animal
+        System.out.println("\nCadastro do Animal:");
+        System.out.print("Nome: ");
+        animal.setNome_animal(scanner.nextLine());
+        System.out.print("Espécie: ");
+        animal.setEspecie(scanner.nextLine());
+        System.out.print("Raça: ");
+        animal.setRaca(scanner.nextLine());
+        System.out.print("Data de nascimento: ");
+        animal.setData_nascimento_animal(scanner.nextLine());
+        System.out.print("Pelagem: ");
+        animal.setPelagem(scanner.nextLine());
+        System.out.print("Sexo (F ou M): ");
+        animal.setSexo(scanner.nextLine().charAt(0));
+
+        // Cadastro do Serviço
+        System.out.println("\nCadastro de Serviço:");
+        System.out.print("Nome do serviço: ");
+        servico.setNome_servico(scanner.nextLine());
+        // Supondo que o ID do serviço é gerado automaticamente ou definido em outro lugar
+        servico.setId_servico(1);
+
+        // Cadastro do Tipo de Serviço
+        tipoServico.cadastrarTipoDeServico();
+
+        System.out.println(cliente.imprimir());
+        System.out.println(animal.imprimir());
+        System.out.println(servico.imprimir());
+        System.out.println(tipoServico.imprimir());
     }
 
-    public String imprimir() {
-        return "Data e hora do atendimento: " + data_hora_atendimento +
-                ", Tipo do atendimento: " + tipo_atendimento +
-                ", Status do atendimento: " + status_atendimento +
-                ", Cliente: " + cliente.getNome_cliente() +
-                ", Animal: " + animal.getNome_animal() +
-                ", Serviço: " + servico.getNome_servico();
+    public Cliente getCliente() {
+        return cliente;
     }
-
 }

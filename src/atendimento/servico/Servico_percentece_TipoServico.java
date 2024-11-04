@@ -6,7 +6,6 @@ public class Servico_percentece_TipoServico {
     private Servico servico;
     private TipoServico tiposervico;
 
-
     public double getValor_total() {
         return valor_total;
     }
@@ -39,12 +38,7 @@ public class Servico_percentece_TipoServico {
         this.tiposervico = tiposervico;
     }
 
-    public String Imprimir(){
-        return "Valor total: "+valor_total;
-    }
-
     public String imprimir() {
         return "Valor total: " + valor_total;
     }
-
 }

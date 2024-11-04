@@ -56,9 +56,9 @@ public class Cliente {
         this.nome_cliente = nome_cliente;
     }
 
-    public String Imprimir(){
-        return "Dados do cliente: \n\n" +
-                "Nome: "+nome_cliente+"\nData de nascimento: "+data_nascimento_cliente+"\nEmail: "+email+"\n" +
-                "CPF: "+cpf+"\nTelefone: "+telefone+"\nEndereço: "+endereco+"\n\n";
+    public String imprimir() {
+        return "Dados do cliente:\n\n" +
+                "Nome: " + nome_cliente + "\nData de nascimento: " + data_nascimento_cliente + "\nEmail: " + email + "\n" +
+                "CPF: " + cpf + "\nTelefone: " + telefone + "\nEndereço: " + endereco + "\n\n";
     }
 }

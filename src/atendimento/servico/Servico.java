@@ -23,5 +23,4 @@ public class Servico {
     public String imprimir() {
         return "Nome do serviço: " + nome_servico;
     }
-
 }

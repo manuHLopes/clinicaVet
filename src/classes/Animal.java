@@ -7,8 +7,6 @@ public class Animal {
     private String data_nascimento_animal;
     private String pelagem;
     private char sexo;
-    // double peso_animal; acho que isso aqui fica melhor no prontuário
-
 
     public String getRaca() {
         return raca;
@@ -58,12 +56,10 @@ public class Animal {
         this.sexo = sexo;
     }
 
-
-    public String Imprimir(){
-        return "Dados do animal: \n\n" +
-                "Nome: "+nome_animal+"\nEspécie: "+especie+"\nRaça: "+raca+"\n" +
-                "Data nascimento: "+data_nascimento_animal+"\nPelagem: "+pelagem+"\n" +
-                "Sexo (F ou M): "+sexo;
+    public String imprimir() {
+        return "Dados do animal:\n\n" +
+                "Nome: " + nome_animal + "\nEspécie: " + especie + "\nRaça: " + raca + "\n" +
+                "Data de nascimento: " + data_nascimento_animal + "\nPelagem: " + pelagem + "\n" +
+                "Sexo (F ou M): " + sexo;
     }
-
 }

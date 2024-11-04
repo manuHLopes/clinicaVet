@@ -1,5 +1,6 @@
 package atendimento.servico;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TipoServico {
@@ -49,23 +50,27 @@ public class TipoServico {
         this.valor_servico = valor_servico;
     }
 
-    public void CadastrarTipoDeServico() {
+    public void cadastrarTipoDeServico() {
         Scanner leia = new Scanner(System.in);
-
-        System.out.print("Nome do serviço: ");
-        nome_tipo_servico = leia.nextLine();
-        System.out.print("Descrição do serviço: ");
-        descricao_servico = leia.nextLine();
-        System.out.print("Valor do serviço: ");
-        valor_servico = leia.nextDouble();
-        leia.nextLine();
+        try {
+            System.out.print("Nome do serviço: ");
+            nome_tipo_servico = leia.nextLine();
+            System.out.print("Descrição do serviço: ");
+            descricao_servico = leia.nextLine();
+            System.out.print("Valor do serviço: ");
+            valor_servico = leia.nextDouble();
+            leia.nextLine(); // Limpa o buffer
+        } catch (InputMismatchException e) {
+            System.out.println("Erro: valor inválido. Tente novamente.");
+            leia.nextLine();
+            cadastrarTipoDeServico();
+        }
     }
 
     public String imprimir() {
         return "Dados do serviço:\n" +
                 "Nome do serviço: " + nome_tipo_servico +
-                ", Descrição: " + descricao_servico +
-                ", Valor do serviço: " + valor_servico;
+                "\nDescrição: " + descricao_servico +
+                "\nValor do serviço: " + valor_servico;
     }
-
 }
