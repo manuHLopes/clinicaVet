@@ -1,13 +1,18 @@
 package atendimento.servico;
 
+import java.util.Scanner;
+
 public class TipoServico {
     private int id_tipo_servico;
     private String descricao_servico;
     private String nome_tipo_servico;
     private double valor_servico;
 
-    public TipoServico (String descricao_servico, String nome_tipo_servico, double valor_servico){
-        this.descricao_servico = descricao_servico; //construtor
+    public TipoServico() {
+    }
+
+    public TipoServico(String descricao_servico, String nome_tipo_servico, double valor_servico) {
+        this.descricao_servico = descricao_servico;
         this.nome_tipo_servico = nome_tipo_servico;
         this.valor_servico = valor_servico;
     }
@@ -44,9 +49,23 @@ public class TipoServico {
         this.valor_servico = valor_servico;
     }
 
-    public String Imprimir(){
-        return "Dados do serviço: \n\n" +
-                "Nome do serviço: "+nome_tipo_servico+", Descrição: "+descricao_servico+", " +
-                "Valor do serviço: "+valor_servico;
+    public void CadastrarTipoDeServico() {
+        Scanner leia = new Scanner(System.in);
+
+        System.out.print("Nome do serviço: ");
+        nome_tipo_servico = leia.nextLine();
+        System.out.print("Descrição do serviço: ");
+        descricao_servico = leia.nextLine();
+        System.out.print("Valor do serviço: ");
+        valor_servico = leia.nextDouble();
+        leia.nextLine();
     }
+
+    public String imprimir() {
+        return "Dados do serviço:\n" +
+                "Nome do serviço: " + nome_tipo_servico +
+                ", Descrição: " + descricao_servico +
+                ", Valor do serviço: " + valor_servico;
+    }
+
 }
