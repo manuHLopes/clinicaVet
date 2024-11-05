@@ -1,6 +1,8 @@
 package atendimento.servico;
 
-public class Servico {
+import atendimento.Atendimento;
+
+public class Servico extends Atendimento {
     private int id_servico;
     private String nome_servico;
 
