@@ -6,12 +6,22 @@ public class Consulta {
     private int id_consulta;
     private LocalDate data_hora_consulta;
     private double valor_consulta;
+    private Atendimento atendimento;
 
     //construtor
-    public Consulta(int id_consulta, LocalDate data_hora_consulta, double valor_consulta){
+    public Consulta(int id_consulta, LocalDate data_hora_consulta, double valor_consulta, Atendimento atendimento){
         this.id_consulta = id_consulta;
         this.data_hora_consulta = data_hora_consulta;
         this.valor_consulta = valor_consulta;
+        this.atendimento = atendimento;
+    }
+
+    public Atendimento getAtendimento() {
+        return atendimento;
+    }
+
+    public void setAtendimento(Atendimento atendimento) {
+        this.atendimento = atendimento;
     }
 
     //métodos de acesso
