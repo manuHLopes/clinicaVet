@@ -1,12 +1,14 @@
 package classes.Atendimento;
 
+import java.time.LocalDate;
+
 public class Consulta { 
     private int id_consulta;
-    private String data_hora_consulta;
+    private LocalDate data_hora_consulta;
     private double valor_consulta;
 
     //construtor
-    public Consulta(int id_consulta, String data_hora_consulta, double valor_consulta){
+    public Consulta(int id_consulta, LocalDate data_hora_consulta, double valor_consulta){
         this.id_consulta = id_consulta;
         this.data_hora_consulta = data_hora_consulta;
         this.valor_consulta = valor_consulta;
@@ -19,10 +21,10 @@ public class Consulta {
     public void setId_consulta(int id_consulta) {
         this.id_consulta = id_consulta;
     }    
-    public String getData_hora_consulta() {
+    public LocalDate getData_hora_consulta() {
         return data_hora_consulta;
     }
-    public void setData_hora_consulta(String dataHoraConsulta) {
+    public void setData_hora_consulta(LocalDate dataHoraConsulta) {
         this.data_hora_consulta = dataHoraConsulta;
     }
     public Double getValor_consulta() {

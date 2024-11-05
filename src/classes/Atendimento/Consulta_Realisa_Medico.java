@@ -1,15 +1,17 @@
 package classes.Atendimento;
 
+import java.time.LocalDate;
+
 public class Consulta_Realisa_Medico {
     private double temp_Animal;
     private String observacoes_Prontuario;
     private double peso_Animal;
-    private String data_Criacao_Prontuario;
+    private LocalDate data_Criacao_Prontuario;
     private String diagnostico;
     private Consulta consulta;
     private Medico medico;
 
-public Consulta_Realisa_Medico(double temp_Animal, String observacoes_Prontuario, double peso_Animal, String data_Criacao_Prontuario, String diagnostico, Consulta consulta, Medico medico){
+public Consulta_Realisa_Medico(double temp_Animal, String observacoes_Prontuario, double peso_Animal, LocalDate data_Criacao_Prontuario, String diagnostico, Consulta consulta, Medico medico){
     this.temp_Animal = temp_Animal;
     this.observacoes_Prontuario = observacoes_Prontuario;
     this.peso_Animal = peso_Animal;
@@ -38,10 +40,10 @@ public Consulta_Realisa_Medico(double temp_Animal, String observacoes_Prontuario
     public void setPeso_Animal(double peso_Animal) {
         this.peso_Animal = peso_Animal;
     }
-    public String getData_Criacao_Prontuario() {
+    public LocalDate getData_Criacao_Prontuario() {
         return data_Criacao_Prontuario;
     }
-    public void setData_Criacao_Prontuario(String data_Criacao_Prontuario) {
+    public void setData_Criacao_Prontuario(LocalDate data_Criacao_Prontuario) {
         this.data_Criacao_Prontuario = data_Criacao_Prontuario;
     }
     public String getDiagnostico() {
