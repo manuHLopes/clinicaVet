@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Pagamento {
     private static int contadorPagamento = 0;
     private int id_pagamento;
-    private String forma_pagamento; // 1 - dinheiro, 2 - apenas um cartão, 3 - mais de um cartão;
+    private String forma_pagamento; // dinheiro, pix ou cartão
     private LocalDate data_pagamento;
     private double valor;
     ArrayList<Cartao> cartoes;
