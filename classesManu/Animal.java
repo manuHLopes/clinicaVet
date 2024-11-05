@@ -12,10 +12,22 @@ public class Animal {
     private String data_nascimento_animal;
     private String pelagem;
     private char sexo;
+    private int id_cliente; // como se fosse a chave estrangeira
     // double peso_animal; acho que isso aqui fica melhor no prontuário
 
     public Animal(){
         id_animal = ++contadorAnimal;
+        this.nome_animal = "";
+        this.especie = "";
+        this.raca = "";
+        this.pelagem= "";
+        this.sexo = '0';
+        this.data_nascimento_animal = "";
+    }
+
+    public Animal(int id_cliente){
+        id_animal = ++contadorAnimal;
+        this.id_cliente = id_cliente;
         this.nome_animal = "";
         this.especie = "";
         this.raca = "";
@@ -90,6 +102,13 @@ public class Animal {
         this.sexo = sexo;
     }
 
+    public int getId_cliente() {
+        return id_cliente;
+    }
+
+    public void setId_cliente(int id_cliente) {
+        this.id_cliente = id_cliente;
+    }
 
     // metodos
     public String exibir(){
